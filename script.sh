@@ -38,19 +38,22 @@ do
     echo "VideoID: $id | Title: $title | Views: $views | Likes: $likes | Dislikes: $dislikes | Rlikes: $rlikes% | Rdislikes: $rdislikes% | Ranking: $ranking" >> sortida.csv
 done < temporal3.csv
 
-# Buscar un vídeo por ID o título
-echo "Introdueix la id o el títol d'un vídeo: "
+
+# Demana a l'usuari que introdueixi la id o el títol del vídeo
+echo "Introduce la id o el título de un vídeo: "
 read variable
 
-# Comprobar si hay coincidencias en el archivo CSV
-if grep -q "$variable" sortida.csv; then
-    grep "$variable" sortida.csv
-else
-    echo "No s'han trobat coincidencies"
-    echo "Aquí tens la llista de tots els vídeos:"
-    cat sortida.csv
+# Cerca coincidències a l'arxiu sortida.csv
+grep -q "$variable" sortida.csv
 
+# Comprova si s'ha trobat una coincidència
+if [[ $? != 0 ]]; then
+    echo "No se han encontrado coincidencias"
+else
+    # Mostra les línies que contenen el valor cercat
+    grep "$variable" sortida.csv
 fi
+
 
 
 
