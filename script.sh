@@ -40,7 +40,7 @@ done < temporal3.csv
 
 
 # Demana a l'usuari que introdueixi la id o el títol del vídeo
-echo "Introduce la id o el título de un vídeo: "
+echo "Introdueix la id o el títol d'un vídeo: "
 read variable
 
 # Cerca coincidències a l'arxiu sortida.csv
@@ -48,7 +48,7 @@ grep -q "$variable" sortida.csv
 
 # Comprova si s'ha trobat una coincidència
 if [[ $? != 0 ]]; then
-    echo "No se han encontrado coincidencias"
+    echo "No s'han trobat coincidències"
 else
     # Mostra les línies que contenen el valor cercat
     grep "$variable" sortida.csv
