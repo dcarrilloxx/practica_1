@@ -35,7 +35,7 @@ do
         rdislikes=0
     fi
     # Escribir resultados en un archivo CSV de salida
-    echo "VideoID: $id | Title: $title | Views: $views | Likes: $likes | Dislikes: $dislikes | Rlikes: $rlikes% | Rdislikes: $rdislikes% | Ranking: $ranking" >> sortida.csv
+    echo "VideoID: $id | Title: $title | Publish_time: $publish | Views: $views | Likes: $likes | Dislikes: $dislikes | Rlikes: $rlikes% | Rdislikes: $rdislikes% | Ranking: $ranking" >> sortida.csv
 done < temporal3.csv
 
 
